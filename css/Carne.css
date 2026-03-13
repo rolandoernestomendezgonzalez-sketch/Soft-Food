@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* =========================================
+   IMPORTACIÓN DE FUENTES LOCALES
+   ========================================= */
+@font-face {
+    font-family: 'Almendra';
+    src: url('../font/Almendra/Almendra-Regular.ttf');
+}
+@font-face {
+    font-family: 'Caudex';
+    src: url('../font/Caudex/Caudex-Regular.ttf');
+}
+@font-face {
+    font-family: 'Eagle Lake';
+    src: url('../font/Eagle_Lake/EagleLake-Regular.ttf');
+}
+
+/* =========================================
+   ESTILOS BASE
+   ========================================= */
+body {
+    background-color: #000000;
+    color: #27ae60;
+    margin: 0;
+}
+
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#2b2b2b;
+    padding:10px 25px;
+    height:70px;
+
+    position: sticky;
+    top:0;
+    z-index:2000;
+}
+
+/* Logo */
+.log-cont{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.log-img{
+    width:200px;
+}
+
+/* Buscador */
+.busc-cont{
+    display:flex;
+    align-items:center;
+    width:600px;
+    gap:12px;
+}
+
+.search-box{
+    display:flex;
+    flex:1;
+    background:white;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+.busc-cont select{
+    border:none;
+    padding:10px;
+    background:#f2f2f2;
+    font-size:14px;
+}
+
+.busc-cont input{
+    border:none;
+    padding:10px;
+    flex:1;
+    outline:none;
+}
+
+.search-input{
+    border:none;
+    padding:10px;
+    flex:1;
+    outline:none;
+}
+
+.busc-btn{
+    background:#4CAF50;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.busc-btn img{
+    width:18px;
+}
+
+/* ******************************* USUARIO ************************* */
+.user{
+    position:relative;
+    margin-left:20px;
+    z-index: 1;
+}
+
+.user img{
+    width:35px;
+    cursor:pointer;
+}
+
+
+/* Caja login */
+
+.login-box form{
+    width: 200px;
+    height: 120px;
+}
+.login-box{
+    position:absolute;
+    top:45px;
+    right:0;
+    /*background:white;*/
+    background: rgba(255,255,255,0.15); /* transparencia */
+    backdrop-filter: blur(10px); /* efecto vidrio */
+    -webkit-backdrop-filter: blur(10px);
+    padding:20px;
+    margin: 4px;
+    border-radius:10px;
+    /*width:280px;*/
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    display:none;
+    flex-direction:column;
+    gap:10px;
+}
+
+.login-box h4{
+    margin:0;
+    text-align:center;
+    font-family: "Inter", sans-serif;
+    color:#fff;
+}
+
+.login-box input{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-family: "Inter", sans-serif;
+    margin: 4px;
+}
+
+.login-btn{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:8px;
+    border-radius:5px;
+    cursor:pointer;
+    font-family: "Inter", sans-serif;
+    margin-top: 6px;
+}
+
+.login-btn:hover{
+    background:#1b5e20;
+}
+
+/**********************************************************************/
+/* MENU */
+.nav{
+    display:flex;
+    gap:25px;
+}
+
+.nav a{
+    color:#00ffae;
+    text-decoration:none;
+    font-weight:500;
+    font-family: "Roboto", sans-serif;
+}
+
+.nav a:hover{
+    color:white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* SECCION DERECHA */
+.right-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-direction:row-reverse;
+}
+
+.custom-select{
+    position:relative;
+    width:200px;
+    background:#e7e7e7;
+    cursor:pointer;
+    border-radius:0px;
+    color:black;
+    font-family:"Times New Roman", sans-serif;
+}
+
+.select-header{
+    padding:10px;
+    font-size:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.arrow{
+    font-size:12px;
+    transition:transform 0.3s ease;
+}
+
+/* Cuando el menú está abierto */
+
+.custom-select.active .arrow{
+    transform:rotate(180deg);
+}
+
+.select-options{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#e7e7e7;
+    list-style:none;
+    margin:0;
+    padding:0;
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:max-height 0.35s ease;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.select-options li{
+    padding:10px;
+}
+
+.select-options li:hover{
+    background:#b4b2b2;
+}
+
+.custom-select.active .select-options{
+    max-height:200px;
+}
+
+/* =========================================
+   HERO Y CONTENEDOR
+   ========================================= */
+.hero-carnesyproteinas {
+    height: 80vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                      url("https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1600");
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.hero-carnesyproteinas h1 {
+    font-family: 'Eagle Lake', serif;
+    font-size: 3rem; 
+    color: white; 
+    border: 2px solid white; 
+    padding: 10px 30px;
+}
+
+.carnes-section {
+    padding: 60px 10%;
+}
+
+.carnes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* =========================================
+   TARJETAS Y LÓGICA DE EXPANSIÓN
+   ========================================= */
+.carne-card {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: fit-content; /* Permite que la tarjeta crezca */
+}
+
+.carne-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.carne-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.carne-card h3 {
+    font-family: 'Almendra', serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 15px;
+}
+
+.carne-card p {
+    font-family: 'Caudex', serif;
+    font-size: 14px;
+    color: #cccccc;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+/* CONTENEDOR DE RECETA (EL TRUCO DE LA EXPANSIÓN) */
+.receta-info {
+    max-height: 0;           /* Oculto por defecto */
+    overflow: hidden;        /* No deja ver el texto si está cerrado */
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease;
+    background-color: #000;
+    color: #ddd;
+    text-align: left;        /* Texto a la izquierda para mejor lectura */
+    padding: 0 20px;         /* Padding lateral solamente */
+    font-size: 14px;
+}
+
+/* Estilo cuando la tarjeta está activa */
+.carne-card.activa .receta-info {
+    max-height: 1200px;      /* Se expande suavemente */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #333;
+}
+
+.receta-info h4 {
+    color: #27ae60;
+    margin-top: 10px;
+    font-family: 'Almendra', serif;
+}
+
+.receta-info ul {
+    margin-left: 18px;
+    margin-bottom: 15px;
+}
+
+.calorias {
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+padding:60px 10% 30px 10%;
+margin-top:0px;
+border-top:2px solid #333;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.footer-col h3{
+margin-bottom:18px;
+color:#4CAF50;
+font-size:18px;
+letter-spacing:1px;
+}
+
+.footer-col p{
+font-size:14px;
+margin-bottom:10px;
+color:#aaa;
+cursor:pointer;
+transition:0.3s;
+}
+
+.footer-col p:hover{
+color:white;
+padding-left:5px;
+}
+
+/* FORMULARIO */
+
+.footer-col input,
+.footer-col textarea{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border:none;
+border-radius:5px;
+background:#222;
+color:white;
+border:1px solid #444;
+}
+
+.footer-col textarea{
+height:70px;
+resize:none;
+}
+
+/* BOTÓN */
+
+.footer-col button{
+background:#28a745;
+border:none;
+padding:12px;
+width:100%;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+letter-spacing:1px;
+}
+
+.footer-col button:hover{
+background:#1e7e34;
+transform:scale(1.05);
+}
+
+/* COPYRIGHT */
+
+.copyright{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:20px;
+font-size:13px;
+color:#777;
+}
+
+.redes-sociales{
+text-align:center;
+margin-top:30px;
+}
+
+.redes-sociales i{
+font-size:22px;
+margin:0 10px;
+color:#aaa;
+cursor:pointer;
+transition:0.3s;
+}
+
+.redes-sociales i:hover{
+color:#4CAF50;
+transform:scale(1.2);
+}

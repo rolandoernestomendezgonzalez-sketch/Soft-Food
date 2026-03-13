@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softfood</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/icon/android-chrome-192x192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+
+    <!--Logo-->
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <!-- Buscador -->
+<div class="busc-cont">
+
+    <div class="custom-select">
+        <div class="select-header">
+            <span class="select-text">Seleccionar categoría</span>
+            <span class="arrow">▼</span>
+        </div>
+
+        <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+        </ul>
+    </div>
+
+    <!-- NUEVO CONTENEDOR -->
+    <div class="search-box">
+        <input type="text" placeholder="Busca tus recetas..." class="search-input">
+
+        <button class="busc-btn">
+            <img src="img/buscar.png" alt="Buscar">
+        </button>
+    </div>
+
+</div>
+<!--------------------------------------------------------------------------->
+    <!--Nav-->
+    <nav class="nav">
+        <a href="#">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+<!------------------------------- Usuario Login ------------------------------>
+<div class="user">
+    <img src="img/user.png" id="userIcon">
+    <div class="login-box" id="loginBox">
+        <h4>Iniciar sesión</h4>
+
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------------------------------------------->
+
+</header>
+
+<!------------------------------------------------------>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a Softfood donde encontraras comida ligera y saludable</h1>
+        
+        <div class="hero-buttons">
+            <a href="ubicacion.html" class="btn ubicacion">Ubicaciones</a>
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------>
+<section class="features">
+
+    <div class="container">
+
+        <div class="card">
+            <img src="img/Sopa1.jfif.jpeg" alt="Sopa de Choclo">
+            <h3>Sopa de Choclo</h3>
+            <p>Una sopa tradicional de maíz tierno, suave y reconfortante.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/Sopa2.jfif.jpeg" alt="Crema de Espárragos">
+            <h3>Crema de Espárragos</h3>
+            <p>Elegante y depurativa, Perfecta para una cena ligera.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/Sopa3.jfif.jpeg" alt="Shoyu Ramen">
+            <h3>Shoyu Ramen</h3>
+            <p>Un clásico japonés adaptado para ser más saludable.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/ensalada1.jpeg" alt="Ensalada de Frutas">
+            <h3>Ensalada de Frutas</h3>
+            <p>Una mezcla de frutas frescas de temporada, ideal como postre o refrigerio.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/ensalada2.jpeg" alt="Ensalada de Huevo">
+            <h3>Ensalada de Huevo</h3>
+            <p>Hecha con huevos duros picados y mayonesa, servida sobre una cama de lechuga.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/ensalada3.jpeg" alt="Ensalada de Pollo">
+            <h3>Ensalada de Pollo</h3>
+            <p>Incluye pechuga de pollo, verduras y a menudo nueces o frutos secos, aderezada al gusto.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP._YkcJO2j1cS6w2RyOg3ZMAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pechuga de Pollo al Vapor">
+            <h3>Pechuga de Pollo al Vapor</h3>
+            <p>Una opción ligera y saludable. La técnica al vapor mantiene la jugosidad natural del pollo.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=600" alt="Albóndigas de Res en caldo nutritivo">
+            <h3>Albóndigas de Res en caldo nutritivo</h3>
+            <p>Un plato reconfortante por excelencia, esferas de carne de res suaves, deliciosas y jugosas.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=600" alt="Filete de Pescado al Horno">
+            <h3>Filete de Pescado al Horno</h3>
+            <p>Una preparación delicada donde el pescado se cocina en su propio jugo. Destacado por su frescura marina.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/pure1.jpeg" alt="Puré de Calabacín">
+            <h3>Puré de Calabacín</h3>
+            <p>Puré ligero preparado con calabacín cocido. Es refrescante, fácil de digerir y bajo en calorías.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/pure3.jpeg" alt="Puré de Camote">
+            <h3>Puré de Camote</h3>
+            <p>Puré de sabor dulce y textura cremosa elaborado con camote. Aporta energía y contiene vitaminas y fibra.</p>
+        </div>
+
+        <div class="card">
+            <img src="img/pure4.jpeg" alt="Puré de Zanahoria">
+            <h3>Puré de Zanahoria</h3>
+            <p>Puré suave y ligeramente dulce hecho con zanahorias cocidas. Fácil de digerir y aporta vitaminas importantes para la salud.</p>
+        </div>
+
+    </div>
+
+</section>
+<!------------------------------------------------------>
+<section class="gallery-section">
+
+    <div class="gallery-container">
+
+        <!-- Columna 1 -->
+        <div class="column-large">
+            <h2>Especial del Día</h2>
+            <p>Una ensalada muy especial, agrega lechuga como base, zanahoria rallada y queso ¡Además de un toque de cebolla y aceitunas, esta ensalada te encantará!</p>
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="Plato saludable">
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="column">
+            <h2>Más platillos</h2>
+            <img src="img/ensalada4.jpeg" alt="Comida saludable">
+            <img src="img/Sopa4.jpg.jpeg" alt="Ensalada fresca">
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="column">
+            <h2>Diferentes recetas</h2>
+            <img src="img/pure3.jpeg" alt="Bebida natural">
+            <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=600" alt="Plato gourmet">
+        </div>
+    </div>
+</section>
+
+<!-------------------------------FOOTER---------------------------------->
+<footer id="footer">
+
+<div class="footer-container">
+<div class="footer-col">
+<h3>Visitas</h3>
+<p>Restaurantes saludables</p>
+<p>Comida natural</p>
+<p>Planes alimenticios</p>
+<p>Recomendaciones</p>
+</div>
+
+<div class="footer-col">
+<h3>Empresas</h3>
+<p>Softfood</p>
+<p>Restaurantes asociados</p>
+<p>Proveedores</p>
+<p>Trabaja con nosotros</p>
+</div>
+
+<div class="footer-col">
+<h3>Inversiones</h3>
+<p>Oportunidades</p>
+<p>Socios</p>
+<p>Proyectos</p>
+<p>Financiamiento</p>
+</div>
+
+<div class="footer-col">
+<h3>Comentarios</h3>
+
+<form>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<textarea placeholder="Comentario"></textarea>
+
+<button type="submit">ENVIAR</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="redes-sociales">
+
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-youtube"></i>
+
+</div>
+
+<div class="copyright">
+<p>© 2026 Softfood - Todos los derechos reservados</p>
+</div>
+
+</footer>
+<script src="js/script.js"></script>
+<script>
+
+const userIcon = document.getElementById("userIcon");
+const loginBox = document.getElementById("loginBox");
+
+userIcon.addEventListener("click", () => {
+
+    if(loginBox.style.display === "flex"){
+        loginBox.style.display = "none";
+    }else{
+        loginBox.style.display = "flex";
+    }
+
+});
+
+</script>
+</body>
+</html>

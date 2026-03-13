@@ -1,0 +1,272 @@
+/* --- RESET Y BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.header {
+    position: sticky; top: 0; width: 100%; height: 70px;
+    z-index: 1000; background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px); display: flex;
+    align-items: center; justify-content: space-between;
+    padding: 0 40px; flex-shrink: 0;
+}
+
+.logo img { height: 90px; }
+
+.category-select {
+    padding: 8px 20px; border-radius: 25px;
+    border: 1px solid #2ecc71; background-color: #1f2d2a;
+    color: white; cursor: pointer; outline: none;
+    appearance: none; text-align: center;
+    text-align-last: center; min-width: 180px;
+}
+
+.search-container { display: flex; align-items: center; width: 350px; }
+.search-container input {
+    width: 100%; padding: 8px 15px;
+    border-radius: 20px 0 0 20px; border: none;
+}
+.search-container button {
+    padding: 8px 15px; background-color: #2ecc71;
+    color: white; border-radius: 0 20px 20px 0;
+    cursor: pointer; border: none;
+}
+
+.menu ul { display: flex; list-style: none; gap: 20px; }
+.menu a { text-decoration: none; color: white; transition: 0.3s; font-size: 14px; }
+.menu a:hover { color: #2ecc71; }
+
+/* --- HERO --- */
+.hero {
+    height: 80vh; background-image: url("../img/Fondo.jpg");
+    background-size: cover; background-position: center;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center; position: relative; flex-shrink: 0;
+}
+.hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.hero-content { position: relative; z-index: 1; }
+.hero h1 { font-size: 45px; margin-bottom: 15px; }
+
+.btn1, .btn2 {
+    padding: 10px 25px; border-radius: 8px;
+    border: 2px solid #2ecc71; background: transparent;
+    color: white; cursor: pointer; transition: 0.3s;
+    text-decoration: none; display: inline-block; margin: 0 10px;
+}
+.btn1:hover, .btn2:hover { background: #2ecc71; }
+
+/* --- SECCIÓN RECETAS --- */
+.sopas { background-color: #000; padding: 60px 20px; text-align: center; flex: 1; }
+.sopas h2 { margin-bottom: 40px; font-size: 28px; }
+
+.cards {
+    display: flex; justify-content: center;
+    gap: 25px; flex-wrap: wrap;
+    max-width: 1200px; margin: 0 auto;
+    /* ✅ Clave: alinear desde arriba para que no estiren altura */
+    align-items: flex-start;
+}
+
+/* --- CARD --- */
+.card {
+    background-color: #000;
+    width: 350px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    /* ✅ SIN overflow:hidden aquí para que el scale no corte */
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    transform: translateY(-5px);
+}
+
+/* ✅ La imagen SÍ tiene overflow hidden para que respete border-radius */
+.card-img {
+    overflow: hidden;
+    border-radius: 28px 28px 0 0;
+    cursor: pointer;
+}
+
+.card-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #fff;
+    transition: transform 0.4s ease;
+}
+
+.card-img:hover img { transform: scale(1.05); }
+
+.card h3 { padding: 15px 10px; font-size: 20px; }
+
+/* --- CONTENIDO EXPANDIBLE --- */
+.recipe-content {
+    max-height: 0;
+    overflow: hidden;
+    text-align: left;
+    padding: 0 25px;
+    /* ✅ Transición suave */
+    transition: max-height 0.5s ease, padding-bottom 0.4s ease;
+}
+
+.recipe-content h4 {
+    margin-top: 15px; color: #2ecc71;
+    border-bottom: 1px solid #333;
+}
+
+.recipe-content ul, .recipe-content ol {
+    margin: 8px 0 16px 0; padding-left: 18px;
+    color: #bbb; font-size: 14px; line-height: 1.5;
+}
+
+.info-grid {
+    display: flex; justify-content: space-between;
+    background: #111; padding: 12px; border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0 10px; font-size: 0.85em; text-align: center;
+}
+
+/* --- CARD ACTIVA --- */
+.card.active {
+    border-color: #2ecc71;
+    box-shadow: 0 0 35px rgba(46,204,113,0.5);
+    z-index: 10;
+    position: relative;
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+/* ✅ FORZAR cierre en cards NO activas */
+.card:not(.active) .recipe-content {
+    max-height: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+/* --- OVERLAY --- */
+.overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    opacity: 0; visibility: hidden;
+    transition: 0.3s; z-index: 5;
+}
+.overlay.active { opacity: 1; visibility: visible; }
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+padding:60px 10% 30px 10%;
+margin-top:80px;
+border-top:2px solid #333;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+}
+
+.footer-col h3{
+margin-bottom:18px;
+color:#4CAF50;
+font-size:18px;
+letter-spacing:1px;
+}
+
+.footer-col p{
+font-size:14px;
+margin-bottom:10px;
+color:#aaa;
+cursor:pointer;
+transition:0.3s;
+}
+
+.footer-col p:hover{
+color:white;
+padding-left:5px;
+}
+
+/* FORMULARIO */
+
+.footer-col input,
+.footer-col textarea{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border:none;
+border-radius:5px;
+background:#222;
+color:white;
+border:1px solid #444;
+}
+
+.footer-col textarea{
+height:70px;
+resize:none;
+}
+/* BOTÓN */
+
+.footer-col button{
+background:#28a745;
+border:none;
+padding:12px;
+width:100%;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+letter-spacing:1px;
+}
+
+.footer-col button:hover{
+background:#1e7e34;
+transform:scale(1.05);
+}
+
+/* COPYRIGHT */
+
+.copyright{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:20px;
+font-size:13px;
+color:#777;
+}
+.redes-sociales{
+text-align:center;
+margin-top:30px;
+}
+
+.redes-sociales i{
+font-size:22px;
+margin:0 10px;
+color:#aaa;
+cursor:pointer;
+transition:0.3s;
+}
+
+.redes-sociales i:hover{
+color:#4CAF50;
+transform:scale(1.2);
+}

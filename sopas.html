@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopas y Cremas - Softfood</title>
+    <link rel="stylesheet" href="css/sopas.css">
+    <link rel="stylesheet" href="css/ensaladas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+
+    <!--Logo-->
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <!-- Buscador -->
+<div class="busc-cont">
+
+    <div class="custom-select">
+        <div class="select-header">
+            <span class="select-text">Seleccionar categoría</span>
+            <span class="arrow">▼</span>
+        </div>
+
+        <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+        </ul>
+    </div>
+
+    <!-- NUEVO CONTENEDOR -->
+    <div class="search-box">
+        <input type="text" placeholder="Busca tus recetas..." class="search-input">
+
+        <button class="busc-btn">
+            <img src="img/buscar.png" alt="Buscar">
+        </button>
+    </div>
+
+</div>
+<!--------------------------------------------------------------------------->
+    <!--Nav-->
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+<!------------------------------- Usuario Login ------------------------------>
+<div class="user">
+    <img src="img/user.png" id="userIcon">
+    <div class="login-box" id="loginBox">
+        <h4>Iniciar sesión</h4>
+
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------------------------------------------->
+
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sopas y Cremas Saludables</h1>
+        <p>Recetas que nutren tu cuerpo y calman tu alma.</p>
+    </div>
+</section>
+
+<section class="sopas" id="recetas">
+    <h2>Nuestra Selección Especial</h2>
+    <div class="cards" id="container-recetas"></div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h3>Visitas</h3>
+<p>Restaurantes saludables</p>
+<p>Comida natural</p>
+<p>Planes alimenticios</p>
+<p>Recomendaciones</p>
+</div>
+
+<div class="footer-col">
+<h3>Empresas</h3>
+<p>Softfood</p>
+<p>Restaurantes asociados</p>
+<p>Proveedores</p>
+<p>Trabaja con nosotros</p>
+</div>
+
+<div class="footer-col">
+<h3>Inversiones</h3>
+<p>Oportunidades</p>
+<p>Socios</p>
+<p>Proyectos</p>
+<p>Financiamiento</p>
+</div>
+
+<div class="footer-col">
+<h3>Comentarios</h3>
+
+<form>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<textarea placeholder="Comentario"></textarea>
+
+<button type="submit">ENVIAR</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="redes-sociales">
+
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-youtube"></i>
+
+</div>
+
+<div class="copyright">
+<p>© 2026 Softfood - Todos los derechos reservados</p>
+</div>
+
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<script src="js/recetas.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+const userIcon = document.getElementById("userIcon");
+const loginBox = document.getElementById("loginBox");
+
+userIcon.addEventListener("click", () => {
+
+    if(loginBox.style.display === "flex"){
+        loginBox.style.display = "none";
+    }else{
+        loginBox.style.display = "flex";
+    }
+
+});
+
+</script>
+
+</body>
+</html>

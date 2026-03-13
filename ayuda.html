@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Softfood</title>
+    <link rel="stylesheet" href="css/ayuda.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <div class="busc-cont">
+        <div class="custom-select">
+            <div class="select-header">
+                <span class="select-text">Seleccionar categoría</span>
+                <span class="arrow">▼</span>
+            </div>
+            <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+            </ul>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Busca tus recetas..." class="search-input">
+            <button class="busc-btn">
+                <img src="img/buscar.png" alt="Buscar">
+            </button>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+    <div class="user">
+        <img src="img/user.png" id="userIcon">
+        <div class="login-box" id="loginBox">
+            <h4>Iniciar sesión</h4>
+            <form action="login.php" method="POST">
+                <input type="text" name="usuario" placeholder="Usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit" class="login-btn">Ingresar</button>
+            </form>
+        </div>
+    </div>
+</header>
+
+
+<main class="help-main">
+    <section class="help-header">
+        <h1>¿Necesitas ayuda? Estamos aquí para ti</h1>
+        <p>Selecciona un tema o revisa nuestras soluciones rápidas más abajo.</p>
+    </section>
+
+    <section class="categories-grid">
+        <div class="cat-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Recetas</h3>
+            <p>Dudas sobre ingredientes, porciones y valores nutricionales.</p>
+        </div>
+        <div class="cat-card">
+            <i class="fas fa-user-cog"></i>
+            <h3>Cuenta</h3>
+            <p>Gestiona tu perfil, contraseña y preferencias de usuario.</p>
+        </div>
+        <div class="cat-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Seguridad</h3>
+            <p>Protección de datos y términos de servicio.</p>
+        </div>
+    </section>
+
+    <section class="faq-detailed">
+        <h2>Preguntas Frecuentes (FAQs)</h2>
+        
+        <details>
+            <summary>¿Por qué no cargan las imágenes?</summary>
+            <p>Esto suele ocurrir por archivos corruptos en caché. Intenta realizar una limpieza de caché del navegador presionando <strong>CTRL + F5</strong>. Si el problema persiste, verifica que tu conexión a internet sea estable.</p>
+        </details>
+
+        <details>
+            <summary>Problemas al iniciar sesión</summary>
+            <p>Asegúrate de que las mayúsculas/minúsculas en tu contraseña sean correctas. Si has olvidado tu contraseña, utiliza el enlace "¿Olvidaste tu contraseña?" en el panel de login o verifica que tu cuenta haya sido activada mediante el correo de confirmación.</p>
+        </details>
+
+        <details>
+            <summary>El texto no se visualiza correctamente</summary>
+            <p>Es posible que el archivo CSS no esté cargando. Asegúrate de estar usando un navegador moderno y verifica en la consola del desarrollador (F12) si hay errores de carga de archivos (bloqueos de rutas).</p>
+        </details>
+
+        <details>
+            <summary>¿Cómo realizo un plan alimenticio?</summary>
+            <p>1. Inicia sesión en tu cuenta.<br>
+               2. Dirígete al panel administrativo.<br>
+               3. Selecciona la pestaña 'Mis Planes'.<br>
+               4. Haz clic en el botón verde 'Generar nuevo plan'.</p>
+        </details>
+    </section>
+</main>
+
+<footer id="footer">
+
+    <script src="js/script.js"></script>
+
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Visitas</h3>
+            <p>Restaurantes saludables</p>
+            <p>Comida natural</p>
+            <p>Planes alimenticios</p>
+        </div>
+        <div class="footer-col">
+            <h3>Empresas</h3>
+            <p>Softfood</p>
+            <p>Trabaja con nosotros</p>
+        </div>
+        <div class="footer-col">
+            <h3>Inversiones</h3>
+            <p>Oportunidades</p>
+            <p>Proyectos</p>
+        </div>
+        <div class="footer-col">
+            <h3>Comentarios</h3>
+            <form>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo">
+                <textarea placeholder="Comentario"></textarea>
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="redes-sociales">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+    <div class="copyright">
+        <p>© 2026 Softfood - Todos los derechos reservados</p>
+    </div>
+</footer>
+
+<script>
+    // Script para el login (el mismo que ya tenías)
+    const userIcon = document.getElementById("userIcon");
+    const loginBox = document.getElementById("loginBox");
+    userIcon.addEventListener("click", () => {
+        loginBox.style.display = (loginBox.style.display === "flex") ? "none" : "flex";
+    });
+</script>
+</body>
+</html>

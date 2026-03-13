@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ensaladas - Softfood</title>
+
+<link rel="stylesheet" href="css/ensaladas.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <!--Logo-->
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <!-- Buscador -->
+<div class="busc-cont">
+
+    <div class="custom-select">
+        <div class="select-header">
+            <span class="select-text">Seleccionar categoría</span>
+            <span class="arrow">▼</span>
+        </div>
+
+        <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+        </ul>
+    </div>
+
+    <!-- NUEVO CONTENEDOR -->
+    <div class="search-box">
+        <input type="text" placeholder="Busca tus recetas..." class="search-input">
+
+        <button class="busc-btn">
+            <img src="img/buscar.png" alt="Buscar">
+        </button>
+    </div>
+
+</div>
+<!--------------------------------------------------------------------------->
+    <!--Nav-->
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+<!------------------------------- Usuario Login ------------------------------>
+<div class="user">
+    <img src="img/user.png" id="userIcon">
+    <div class="login-box" id="loginBox">
+        <h4>Iniciar sesión</h4>
+
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------------------------------------------->
+
+</header>
+
+<!-- HERO ENSALADAS -->
+<section class="hero-ensaladas">
+<h1>Ensaladas</h1>
+</section>
+
+<!-- SECCIÓN ENSALADAS -->
+<section class="ensaladas-section">
+
+<div class="ensaladas-container">
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-griega.jpg">
+</div>
+
+<h3>Ensalada Griega</h3>
+
+<p>Lleva tomate, pepino, cebolla roja, aceitunas kalamata y queso feta, aderezada con aceite de oliva y orégano</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Tomate</li>
+<li>Pepino</li>
+<li>Cebolla roja</li>
+<li>Aceitunas kalamata</li>
+<li>Queso feta</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se lavan y cortan los vegetales en trozos medianos.</p>
+<p>Luego se mezclan en un recipiente junto con las aceitunas.</p>
+<p>Finalmente se agrega el queso feta y un aderezo de aceite de oliva y orégano.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>Rica en antioxidantes.</li>
+<li>Favorece la digestión.</li>
+<li>Fuente de vitaminas y minerales.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 220 calorías por porción.</p>
+
+</div>
+</div>
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-frutas.jpg">
+</div>
+
+<h3>Ensalada de Frutas </h3>
+
+<p>Mezcla de frutas frescas de temporada, a menudo aderezada con jugo de naranja o miel, ideal como postre o refrigerio.</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Melón</li>
+<li>Piña</li>
+<li>Sandía</li>
+<li>Fresas</li>
+<li>Uvas</li>
+<li>Jugo de naranja natural</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se pelan y cortan las frutas en cubos uniformes.</p>
+<p>Luego se colocan en un tazón grande y se mezclan con cuidado para no maltratarlas.</p>
+<p>Finalmente se baña con el jugo de naranja para evitar la oxidación y dar frescura.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>Gran aporte de vitamina C y antioxidantes.</li>
+<li>Altamente hidratante por su contenido de agua.</li>
+<li>Mejora la salud de la piel.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 120 calorías por porción.</p>
+
+</div>
+</div>
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-huevo.jpg">
+</div>
+
+<h3>Ensalada de Huevo </h3>
+
+<p>Hecha con huevos duros picados, mayonesa, mostaza y a veces cebolla, servida sobre una cama de lechuga.</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Huevos cocidos</li>
+<li>Mayonesa</li>
+<li>Mostaza</li>
+<li>Lechuga</li>
+<li>Aguacate</li>
+<li>Cebollín</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se corta la lechuga y se pelan los huevos cocidos, estos se pican en trozos pequeños.</p>
+<p>Luego se mezclan en un bol con la mayonesa, la mostaza y el aguacate para dar textura.</p>
+<p>Finalmente se decora con el cebollín y un toque de pimienta negra.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>Excelente fuente de proteína de alta calidad.</li>
+<li>Contiene colina, vital para la salud cerebral.</li>
+<li>Ayuda al mantenimiento de la masa muscular.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 250 calorías por porción.</p>
+
+</div>
+</div>
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-pollo.jpg">
+</div>
+
+<h3>Ensalada de Pollo </h3>
+
+<p>Incluye pechuga de pollo a la parrilla o asada, verduras frescas y a menudo nueces o frutos secos, aderezada al gusto.</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Pechuga de pollo deshebrada o en cubos</li>
+<li>Tomate, aguacate y zanahorias</li>
+<li>Papa cocida en cubos</li>
+<li>Crema o mayonesa</li>
+<li>Lechuga</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se mezcla el pollo con las verduras y la papa en un recipiente amplio.</p>
+<p>Luego se incorpora la crema o mayonesa hasta obtener una mezcla homogénea.</p>
+<p>Finalmente se sirve sobre una cama de lechuga fresca.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>Rica en aminoácidos esenciales.</li>
+<li>Aporta energía sostenida gracias a los carbohidratos de la papa.</li>
+<li>Es una comida completa y equilibrada.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 320 calorías por porción.</p>
+
+</div>
+</div>
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-cesar.jpg">
+</div>
+
+<h3>Ensalada César </h3>
+
+<p>Compuesta por lechuga romana, pan tostado, queso parmesano y aderezo César, que incluye yema de huevo y anchoas.</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Lechuga romana</li>
+<li>Pan tostado</li>
+<li>Queso parmesano rallado</li>
+<li>Pechuga de pollo a la plancha</li>
+<li>Aderezo: Yema de huevo, aceite de oliva, anchoas, ajo y limón</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se lava la lechuga y se trocea con las manos en pedazos grandes.</p>
+<p>Luego se mezclan las hojas con el aderezo César y el queso parmesano hasta que queden bien cubiertas.</p>
+<p>Finalmente se añade el pan tostado por encima para mantener su textura crujiente.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>Aporta calcio gracias al queso parmesano.</li>
+<li>Es saciante si se añade proteína.</li>
+<li>Aporta fibra de las hojas verdes.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 390 calorías por porción.</p>
+
+</div>
+</div>
+
+<div class="ensalada-card">
+
+<div class="ensalada-img" onclick="toggleInfo(this)">
+<img src="img/ensalada-vegana.jpg">
+</div>
+
+<h3>Ensalada Vegana</h3>
+
+<p>Generalmente incluye verduras frescas, legumbres, semillas y un aderezo a base de aceite y limón, sin productos animales.</p>
+
+<div class="info-ensalada">
+
+<h4>Ingredientes</h4>
+<ul>
+<li>Aceitunas</li>
+<li>Lechuga y pepino</li>
+<li>Aguacate</li>
+<li>Tomate</li>
+<li>Aderezo: Aceite y limón</li>
+</ul>
+
+<h4>Preparación</h4>
+<p>Primero se coloca una base de lechuga y pepino en un bol profundo.</p>
+<p>Luego se agregan las aceitunas, el aguacate en láminas y el tomate</p>
+<p>Finalmente se rocía con el aderezo de aceito y limón para aportar cremosidad y grasas saludables.</p>
+
+<h4>Beneficios</h4>
+<ul>
+<li>100% libre de colesterol.</li>
+<li>Alta en hierro y proteínas de origen vegetal.</li>
+<li>Gran contenido de fibra que mejora el tránsito intestinal.</li>
+</ul>
+
+<h4>Calorías</h4>
+<p>≈ 200 calorías por porción.</p>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h3>Visitas</h3>
+<p>Restaurantes saludables</p>
+<p>Comida natural</p>
+<p>Planes alimenticios</p>
+<p>Recomendaciones</p>
+</div>
+
+<div class="footer-col">
+<h3>Empresas</h3>
+<p>Softfood</p>
+<p>Restaurantes asociados</p>
+<p>Proveedores</p>
+<p>Trabaja con nosotros</p>
+</div>
+
+<div class="footer-col">
+<h3>Inversiones</h3>
+<p>Oportunidades</p>
+<p>Socios</p>
+<p>Proyectos</p>
+<p>Financiamiento</p>
+</div>
+
+<div class="footer-col">
+<h3>Comentarios</h3>
+
+<form>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<textarea placeholder="Comentario"></textarea>
+
+<button type="submit">ENVIAR</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="redes-sociales">
+
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-youtube"></i>
+
+</div>
+
+<div class="copyright">
+<p>© 2026 Softfood - Todos los derechos reservados</p>
+</div>
+
+</footer>
+
+<script src="js/ensaladas.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+const userIcon = document.getElementById("userIcon");
+const loginBox = document.getElementById("loginBox");
+
+userIcon.addEventListener("click", () => {
+
+    if(loginBox.style.display === "flex"){
+        loginBox.style.display = "none";
+    }else{
+        loginBox.style.display = "flex";
+    }
+
+});
+
+</script>
+
+<div class="overlay" id="overlay"></div>
+
+</body>
+</html>

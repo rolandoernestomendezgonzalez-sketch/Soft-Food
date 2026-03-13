@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purés y Acompañamientos</title>
+    <link rel="stylesheet" href="css/ensaladas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* FONDO NEGRO ABSOLUTO */
+        body {
+            background-color: #000000;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- EFECTO DE DESENFOQUE PARA EL FONDO --- */
+        .blur-active {
+            filter: blur(8px) grayscale(30%);
+            opacity: 0.5;
+            pointer-events: none; /* Evita interactuar con lo que está borroso */
+            transition: all 0.5s ease;
+        }
+
+        header, .hero, footer {
+            transition: all 0.5s ease;
+        }
+
+        /* --- BOTONES HERO --- */
+        .hero-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-reserve { background-color: #ffffff; color: #000000; border: 2px solid #ffffff; }
+        .btn-reserve:hover { background-color: transparent; color: #ffffff; }
+        .btn-location { background-color: transparent; color: #ffffff; border: 2px solid #ffffff; }
+        .btn-location:hover { background-color: #ffffff; color: #000000; }
+
+        /* CUADRÍCULA */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 40px 5%;
+            align-items: start;
+        }
+
+        /* MARCO BLANCO Y EFECTO ENFOQUE */
+        .card-container {
+            background: #000000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.5s ease, opacity 0.5s ease;
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cuando la tarjeta está enfocada */
+        .card-container.focused {
+            z-index: 100;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Cuando otras tarjetas se desenfocan */
+        .card-container.unfocused {
+            filter: blur(4px);
+            opacity: 0.3;
+        }
+
+        .card-container:hover:not(.unfocused) {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-info {
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .card-info h3 { margin: 0; color: #ffffff; font-size: 1.4rem; }
+        .card-info p { color: #cccccc; font-size: 0.95rem; margin-top: 10px; line-height: 1.4; }
+
+        /* --- CONTENIDO DESPLEGABLE --- */
+        .recipe-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #000000;
+            padding: 0 10px;
+        }
+
+        .recipe-details.open {
+            max-height: 1200px;
+            padding-bottom: 20px;
+            border-top: 1px solid #333;
+            margin-top: 10px;
+        }
+
+        .recipe-details h4 {
+            color: #ffffff;
+            border-left: 3px solid #ffffff;
+            padding-left: 10px;
+            margin: 20px 0 10px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .ingredients-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .ingredients-row li {
+            background: #222;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #444;
+        }
+
+        .recipe-details p {
+            text-align: left;
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+    <!--Logo-->
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <!-- Buscador -->
+<div class="busc-cont">
+
+    <div class="custom-select">
+        <div class="select-header">
+            <span class="select-text">Seleccionar categoría</span>
+            <span class="arrow">▼</span>
+        </div>
+
+        <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+        </ul>
+    </div>
+
+    <!-- NUEVO CONTENEDOR -->
+    <div class="search-box">
+        <input type="text" placeholder="Busca tus recetas..." class="search-input">
+
+        <button class="busc-btn">
+            <img src="img/buscar.png" alt="Buscar">
+        </button>
+    </div>
+
+</div>
+<!--------------------------------------------------------------------------->
+    <!--Nav-->
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+<!------------------------------- Usuario Login ------------------------------>
+<div class="user">
+    <img src="img/user.png" id="userIcon">
+    <div class="login-box" id="loginBox">
+        <h4>Iniciar sesión</h4>
+
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------------------------------------------->
+
+</header>
+
+    <section class="hero">
+        <div class="hero-content" style="text-align:center; padding: 60px 0;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Purés y Acompañamientos Saludables</h1>
+        
+        </div>
+    </section>
+
+    <section class="sopas">
+        <div class="cards">
+
+            <div class="card-container" onclick="toggleRecipe('r1')">
+                <div class="img-container"><img src="img/rustico.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Papa Rústico</h3>
+                    <p>El acompañamiento clásico por excelencia, preparado con un toque artesanal. Conservamos parte de su piel para brindarte una textura auténtica y un mayor aporte de fibra natural</p>
+                </div>
+                <div id="r1" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>3 Papas</li><li>Mantequilla</li><li>Leche</li><li>Sal</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Hervir las papas 20 min, triturar con piel para textura rústica y mezclar con lácteos.</p>
+                    <h4>Beneficios</h4>
+                    <p>Aporta energía rápida, potasio para los músculos y es de fácil digestión.</p>
+                </div>
+            </div>
+
+            <div class="card-container" onclick="toggleRecipe('r2')">
+                <div class="img-container"><img src="img/gui.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Guisantes</h3>
+                    <p>Una opción vibrante y fresca que rompe con lo tradicional. Su color verde intenso refleja su alto contenido nutricional, ofreciendo un sabor ligeramente dulce y una cremosidad sorprendente</p>
+                </div>
+                <div id="r2" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>Guisantes</li><li>Mantequilla</li><li>Menta</li><li>Sal</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Cocer los guisantes 8 min, licuar con un toque de menta y mantequilla hasta que esté cremoso.</p>
+                    <h4>Beneficios</h4>
+                    <p>Alto en proteína vegetal, fibra para la digestión y rico en vitamina C.</p>
+                </div>
+            </div>
+
+            <div class="card-container" onclick="toggleRecipe('r3')">
+                <div class="img-container"><img src="img/zana.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Zanahoria</h3>
+                    <p>Delicadamente dulce y lleno de vitalidad. Este puré es la combinación perfecta entre suavidad y salud, ideal para equilibrar platos intensos con un toque de color y ligereza.</p>
+                </div>
+                <div id="r3" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>Zanahorias</li><li>Aceite Oliva</li><li>Sal</li><li>Pimienta</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Hervir zanahorias hasta que estén suaves y procesar con aceite de oliva.</p>
+                    <h4>Beneficios</h4>
+                    <p>Excelente para la vista (Vitamina A) y mejora la salud de la piel.</p>
+                </div>
+            </div>
+
+            <div class="card-container" onclick="toggleRecipe('r4')">
+                <div class="img-container"><img src="img/calaza1.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Calabaza</h3>
+                    <p>Aterciopelado y reconfortante, este puré destaca por su ligereza. Es una opción baja en calorías pero con un sabor profundo que evoca la cocina de hogar en su versión más saludable.</p>
+                </div>
+                <div id="r4" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>Calabaza</li><li>Leche</li><li>Nuez Moscada</li><li>Sal</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Hornear o hervir la calabaza, retirar la pulpa y mezclar con nuez moscada.</p>
+                    <h4>Beneficios</h4>
+                    <p>Bajo en calorías, rico en antioxidantes y refuerza el sistema inmune.</p>
+                </div>
+            </div>
+
+            <div class="card-container" onclick="toggleRecipe('r5')">
+                <div class="img-container"><img src="img/calabacin.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Calabacín</h3>
+                    <p>La opción más ligera e hidratante de nuestra selección. Con una textura suave y un sabor sutil, es el aliado perfecto para quienes buscan una cena nutritiva sin sentirse pesados</p>
+                </div>
+                <div id="r5" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>Calabacín</li><li>Cebolla</li><li>Aceite</li><li>Sal</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Saltear calabacín con cebolla y triturar. Es un puré muy ligero y acuoso.</p>
+                    <h4>Beneficios</h4>
+                    <p>Altamente hidratante, diurético natural y muy bajo en carbohidratos.</p>
+                </div>
+            </div>
+
+            <div class="card-container" onclick="toggleRecipe('r6')">
+                <div class="img-container"><img src="img/camoton.jpg"></div>
+                <div class="card-info">
+                    <h3>Puré de Camote</h3>
+                    <p>Una fuente de energía natural con un carácter rústico. Su dulzor característico y textura densa lo convierten en el acompañamiento favorito para quienes necesitan un extra de vitalidad en su día</p>
+                </div>
+                <div id="r6" class="recipe-details">
+                    <h4>Ingredientes</h4>
+                    <ul class="ingredients-row">
+                        <li>Camote</li><li>Canela</li><li>Leche</li><li>Sal</li>
+                    </ul>
+                    <h4>Preparación</h4>
+                    <p>Hervir camote naranja, triturar y añadir canela para resaltar su dulzor natural.</p>
+                    <h4>Beneficios</h4>
+                    <p>Energía de larga duración, rico en betacarotenos y ayuda a la salud del corazón.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Visitas</h3>
+                <p>Restaurantes saludables</p>
+                <p>Comida natural</p>
+                <p>Planes alimenticios</p>
+                <p>Recomendaciones</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Empresas</h3>
+                <p>Softfood</p>
+                <p>Restaurantes asociados</p>
+                <p>Proveedores</p>
+                <p>Trabaja con nosotros</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Inversiones</h3>
+                <p>Oportunidades</p>
+                <p>Socios</p>
+                <p>Proyectos</p>
+                <p>Financiamiento</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Comentarios</h3>
+                <form>
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Correo">
+                    <textarea placeholder="Comentario"></textarea>
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="redes-sociales">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 Softfood - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleRecipe(id) {
+            const content = document.getElementById(id);
+            const card = content.parentElement;
+            const isOpen = content.classList.contains('open');
+
+            // Elementos para desenfocar
+            const header = document.querySelector('header');
+            const hero = document.querySelector('.hero');
+            const footer = document.querySelector('footer');
+            const allCards = document.querySelectorAll('.card-container');
+
+            // Resetear todo
+            document.querySelectorAll('.recipe-details').forEach(el => el.classList.remove('open'));
+            allCards.forEach(c => c.classList.remove('focused', 'unfocused'));
+            header.classList.remove('blur-active');
+            hero.classList.remove('blur-active');
+            footer.classList.remove('blur-active');
+
+            if (!isOpen) {
+                // ENFOCAR
+                content.classList.add('open');
+                card.classList.add('focused');
+                
+                // DESENFOCAR RESTO
+                header.classList.add('blur-active');
+                hero.classList.add('blur-active');
+                footer.classList.add('blur-active');
+                
+                allCards.forEach(c => {
+                    if (c !== card) c.classList.add('unfocused');
+                });
+            }
+        }
+    </script>
+
+<script src="js/script.js"></script>
+<script>
+
+const userIcon = document.getElementById("userIcon");
+const loginBox = document.getElementById("loginBox");
+
+userIcon.addEventListener("click", () => {
+
+    if(loginBox.style.display === "flex"){
+        loginBox.style.display = "none";
+    }else{
+        loginBox.style.display = "flex";
+    }
+
+});
+
+</script>
+
+</body>
+</html>

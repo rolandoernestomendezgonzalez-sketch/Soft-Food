@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnes y Proteínas - Softfood</title>
+    <link rel="stylesheet" href="css/Carne.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+
+    <!--Logo-->
+    <div class="log-cont">
+        <img src="img/logo.png" class="log-img">
+    </div>
+
+    <!-- Buscador -->
+<div class="busc-cont">
+
+    <div class="custom-select">
+        <div class="select-header">
+            <span class="select-text">Seleccionar categoría</span>
+            <span class="arrow">▼</span>
+        </div>
+
+        <ul class="select-options">
+            <a href="ensaladas.html"><li>Ensaladas</li></a>
+            <a href="carnes.html"><li>Carnes y proteínas</li></a>
+            <a href="sopas.html"><li>Sopas y cremas</li></a>
+            <a href="pures.html"><li>Pures y acompañamientos</li></a>
+        </ul>
+    </div>
+
+    <!-- NUEVO CONTENEDOR -->
+    <div class="search-box">
+        <input type="text" placeholder="Busca tus recetas..." class="search-input">
+
+        <button class="busc-btn">
+            <img src="img/buscar.png" alt="Buscar">
+        </button>
+    </div>
+
+</div>
+<!--------------------------------------------------------------------------->
+    <!--Nav-->
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="#footer">Contactos</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+<!------------------------------- Usuario Login ------------------------------>
+<div class="user">
+    <img src="img/user.png" id="userIcon">
+    <div class="login-box" id="loginBox">
+        <h4>Iniciar sesión</h4>
+
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------------------------------------------->
+
+</header>
+<!-------------------------------------------------------------------------->
+
+<section class="hero-carnesyproteinas">
+    <h1>Carnes y Proteínas</h1>
+</section>
+
+<section class="carnes-section">
+    <div class="carnes-container">
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://tse2.mm.bing.net/th/id/OIP._YkcJO2j1cS6w2RyOg3ZMAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+            <h3>Pechuga de pollo al vapor</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>1 pechuga de pollo</li>
+                    <li>1 limón</li>
+                    <li>Aceite de oliva</li>
+                    <li>Ajo picado</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Lava la pechuga, cocínala al vapor durante 20 minutos. Prepara una salsa con limón, aceite y ajo y agrégala encima.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Alta proteína</li>
+                    <li>Baja en grasa</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 220 kcal</p>
+            </div>
+        </div>
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=600">
+            <h3>Albóndigas de res en caldo</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>300g carne molida de res</li>
+                    <li>1 huevo y pan rallado</li>
+                    <li>Zanahoria y papa en cubos</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Mezcla la carne con huevo y pan. Forma bolitas y cocínalas en el caldo hirviendo con las verduras por 25 min.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Ricas en Hierro</li>
+                    <li>Fácil digestión</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 335 kcal</p>
+            </div>
+        </div>
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=600">
+            <h3>Filete de pescado al horno</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>1 filete de pescado blanco</li>
+                    <li>Limón y ajo picado</li>
+                    <li>Aceite de oliva</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Sazona el pescado. Hornea a 180°C durante 12-15 minutos hasta que la carne esté firme.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Alto en Omega-3</li>
+                    <li>Salud cardiovascular</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 200 kcal</p>
+            </div>
+        </div>
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=600">
+            <h3>Estofado de carne de res</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>300g carne de res en cubos</li>
+                    <li>Papa y zanahoria</li>
+                    <li>Caldo de res</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Sella la carne. Añade las verduras y el caldo. Cocina a fuego lento por 40 min.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Gran aporte energético</li>
+                    <li>Vitamina B12</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 375 kcal</p>
+            </div>
+        </div>
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=600">
+            <h3>Pechuga de pavo a la plancha</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>1 pechuga de pavo</li>
+                    <li>Yogur natural</li>
+                    <li>Eneldo</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Cocina el pavo a la plancha. Sirve con una salsa fría de yogur y ajo.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Proteína muy magra</li>
+                    <li>Bajo en grasa</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 215 kcal</p>
+            </div>
+        </div>
+
+        <div class="carne-card" onclick="toggleReceta(this)">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600">
+            <h3>Medallones de pollo</h3>
+            <p>Haz clic para ver receta completa</p>
+
+            <div class="receta-info">
+                <h4>Ingredientes</h4>
+                <ul>
+                    <li>1 pechuga en medallones</li>
+                    <li>Crema de leche</li>
+                    <li>Mantequilla</li>
+                </ul>
+                <h4>Preparación</h4>
+                <p>Dora los medallones. Agrega crema y caldo; reduce hasta que espese.</p>
+                <h4>Beneficios</h4>
+                <ul>
+                    <li>Textura suave</li>
+                    <li>Fácil de masticar</li>
+                </ul>
+                <p class="calorias"><strong>Calorías:</strong> 400 kcal</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer id="footer">
+
+<div class="footer-container">
+
+<div class="footer-col">
+<h3>Visitas</h3>
+<p>Restaurantes saludables</p>
+<p>Comida natural</p>
+<p>Planes alimenticios</p>
+<p>Recomendaciones</p>
+</div>
+
+<div class="footer-col">
+<h3>Empresas</h3>
+<p>Softfood</p>
+<p>Restaurantes asociados</p>
+<p>Proveedores</p>
+<p>Trabaja con nosotros</p>
+</div>
+
+<div class="footer-col">
+<h3>Inversiones</h3>
+<p>Oportunidades</p>
+<p>Socios</p>
+<p>Proyectos</p>
+<p>Financiamiento</p>
+</div>
+
+<div class="footer-col">
+<h3>Comentarios</h3>
+
+<form>
+
+<input type="text" placeholder="Nombre">
+
+<input type="email" placeholder="Correo">
+
+<textarea placeholder="Comentario"></textarea>
+
+<button type="submit">ENVIAR</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="redes-sociales">
+
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-twitter"></i>
+<i class="fa-brands fa-youtube"></i>
+
+</div>
+
+<div class="copyright">
+<p>© 2026 Softfood - Todos los derechos reservados</p>
+</div>
+
+</footer>
+
+<script>
+// Función para abrir solo una receta a la vez
+function toggleReceta(card) {
+    const todasLasTarjetas = document.querySelectorAll('.carne-card');
+    
+    // Si la tarjeta ya está activa, la cerramos
+    if (card.classList.contains('activa')) {
+        card.classList.remove('activa');
+    } else {
+        // Cerramos cualquier otra que esté abierta
+        todasLasTarjetas.forEach(c => c.classList.remove('activa'));
+        // Abrimos la actual
+        card.classList.add('activa');
+    }
+}
+</script>
+
+<script src="js/script.js"></script>
+<script>
+
+const userIcon = document.getElementById("userIcon");
+const loginBox = document.getElementById("loginBox");
+
+userIcon.addEventListener("click", () => {
+
+    if(loginBox.style.display === "flex"){
+        loginBox.style.display = "none";
+    }else{
+        loginBox.style.display = "flex";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
